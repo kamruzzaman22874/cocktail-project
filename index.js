@@ -3,6 +3,8 @@ const loadCocktails = async(search) =>{
     const res = await fetch(url);
     const data = await res.json();
     displayCocktails(data.drinks);
+
+    console.log(data.drinks);
 }
 
 const displayCocktails = cocktails =>{
@@ -27,7 +29,11 @@ cocktailsContainer.innerText = '';
                         <div class="card-body">
                           <h5 class="card-title">${cocktail.strDrink}</h5>
                           <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                          <a herf ="" class = "btn btn-primary">View Details</a>
+                          <a herf ="" class = "btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">View Details</a>
+                          
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Launch demo modal
+                     </button>
 
                           
                         </div>
